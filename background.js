@@ -2,27 +2,27 @@ class Background {
   constructor() {
     this.imgs = [
       {
-        src: loadImage("./assets/background/plx-1.png"),
+        src: loadImage("/assets/background/Nebula Blue.png"),
         x: 0,
         speed: 0,
       },
       {
-        src: loadImage("./assets/background/plx-2.png"),
+        src: loadImage("/assets/background/Stars Small_1.png"),
         x: 0,
         speed: 1,
       },
       {
-        src: loadImage("./assets/background/plx-3.png"),
+        src: loadImage("/assets/background/Stars Small_2.png"),
         x: 0,
         speed: 2,
       },
       {
-        src: loadImage("./assets/background/plx-4.png"),
+        src: loadImage("/assets/background/Stars-Big_1_1_PC.png"),
         x: 0,
         speed: 3,
       },
       {
-        src: loadImage("./assets/background/plx-5.png"),
+        src: loadImage("/assets/background/Stars-Big_1_2_PC.png"),
         x: 0,
         speed: 4,
       },

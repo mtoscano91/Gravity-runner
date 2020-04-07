@@ -8,8 +8,10 @@ function preload() {
 function setup() {
   //SETUP EL GAME + COND INICIALES
   createCanvas(
-    game.background.imgs[0].src.width,
-    game.background.imgs[0].src.height
+    800,
+    400
+    // game.background.imgs[0].src.width,
+    // game.background.imgs[0].src.height
   );
   game.setup();
 }

@@ -1,0 +1,15 @@
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.rules {
+  width: 30%;
+}

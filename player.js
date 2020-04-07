@@ -1,19 +1,32 @@
 class Player {
   constructor() {
-    this.img = loadImage("./assets/player/run.gif");
-    this.gravity = 0.03;
+    this.imgs = {
+      default: loadImage("./assets/astronaut/walking.png"),
+      down: loadImage("./assets/astronaut/drag down.png"),
+      up: loadImage("/assets/astronaut/drag up.png"),
+      left: loadImage("/assets/astronaut/drag left.png"),
+      right: loadImage("/assets/astronaut/drag right.png"),
+    };
+
+    this.gravity = 0.05;
     this.gravityY = this.gravity;
-    this.gravityX = 0;
+    this.gravityX = 0.01;
     this.speedY = 0;
     this.speedX = 0;
     this.maxSpeed = 4;
+    this.index = 0;
+    this.orientation = "default";
   }
 
   setup() {
-    this.height = this.img.height;
-    this.width = this.img.width;
+    this.height = 50;
+    this.width = 50;
     this.x = 50;
     this.y = 100;
+  }
+
+  displayImg(orientation) {
+    image(this.imgs[orientation], this.x, this.y);
   }
 
   display() {
@@ -44,33 +57,49 @@ class Player {
     }
 
     ///Display image in canvas
-    image(this.img, this.x, this.y);
+    this.displayImg(this.orientation);
+
+    //Loop depending on speed
+    /*
+    if (Math.abs(this.speedX) > 3 || Math.abs(this.speedY) > 3) {
+      image(this.imgs[4].src, this.x, this.y);
+    } else if (Math.abs(this.speedX) > 2 || Math.abs(this.speedY) > 2) {
+      image(this.imgs[3].src, this.x, this.y);
+    } else if (Math.abs(this.speedX) > 1 || Math.abs(this.speedY) > 1) {
+      image(this.imgs[2].src, this.x, this.y);
+    } else {
+      if (frameCount % 10 === 0) {
+        this.index++;
+      }
+      image(this.imgs[this.index % 2].src, this.x, this.y);
+    }
+    */
   }
 
   gravityUp() {
     ///Change gravityY and set gravity other axis to 0.
     this.gravityY = -this.gravity;
     this.gravityX = 0;
-    //Change side from image
-    this.img = loadImage("./assets/player/run.gif");
+    //Rotate image
+    this.orientation = "up";
   }
 
   gravityDown() {
     this.gravityY = this.gravity;
     this.gravityX = 0;
-    this.img = loadImage("./assets/player/run.gif");
+    this.orientation = "down";
   }
 
   gravityLeft() {
     this.gravityY = 0;
     this.gravityX = -this.gravity;
-    //this.img = loadImage("#");
+    this.orientation = "left";
   }
 
   gravityRight() {
     this.gravityY = 0;
     this.gravityX = this.gravity;
-    this.img = loadImage("./assets/player/run.gif");
+    this.orientation = "right";
   }
 
   speed(speed, gravity) {
