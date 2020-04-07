@@ -2,27 +2,27 @@ class Background {
   constructor() {
     this.imgs = [
       {
-        src: loadImage("../w2d5/p5funLecture/assets/background/plx-1.png"),
+        src: loadImage("./assets/background/plx-1.png"),
         x: 0,
         speed: 0,
       },
       {
-        src: loadImage("../w2d5/p5funLecture/assets/background/plx-2.png"),
+        src: loadImage("./assets/background/plx-2.png"),
         x: 0,
         speed: 1,
       },
       {
-        src: loadImage("../w2d5/p5funLecture/assets/background/plx-3.png"),
+        src: loadImage("./assets/background/plx-3.png"),
         x: 0,
         speed: 2,
       },
       {
-        src: loadImage("../w2d5/p5funLecture/assets/background/plx-4.png"),
+        src: loadImage("./assets/background/plx-4.png"),
         x: 0,
         speed: 3,
       },
       {
-        src: loadImage("../w2d5/p5funLecture/assets/background/plx-5.png"),
+        src: loadImage("./assets/background/plx-5.png"),
         x: 0,
         speed: 4,
       },

@@ -1,6 +1,6 @@
 class Player {
   constructor() {
-    this.img = loadImage("../w2d5/p5funLecture/assets/player/run.gif");
+    this.img = loadImage("./assets/player/run.gif");
     this.gravity = 0.03;
     this.gravityY = this.gravity;
     this.gravityX = 0;
@@ -52,13 +52,13 @@ class Player {
     this.gravityY = -this.gravity;
     this.gravityX = 0;
     //Change side from image
-    this.img = loadImage("../w2d5/p5funLecture/assets/player/mid air.gif");
+    this.img = loadImage("./assets/player/run.gif");
   }
 
   gravityDown() {
     this.gravityY = this.gravity;
     this.gravityX = 0;
-    this.img = loadImage("../w2d5/p5funLecture/assets/player/run.gif");
+    this.img = loadImage("./assets/player/run.gif");
   }
 
   gravityLeft() {
@@ -70,7 +70,7 @@ class Player {
   gravityRight() {
     this.gravityY = 0;
     this.gravityX = this.gravity;
-    this.img = loadImage("../w2d5/p5funLecture/assets/player/run.gif");
+    this.img = loadImage("./assets/player/run.gif");
   }
 
   speed(speed, gravity) {

@@ -50,11 +50,11 @@ class Coins extends Obstacles {
     this.height = 15;
     this.width = 15;
     this.imgs = [
-      { src: loadImage("../w2d5/p5funLecture/assets/coins/tile000.png") },
-      { src: loadImage("../w2d5/p5funLecture/assets/coins/tile001.png") },
-      { src: loadImage("../w2d5/p5funLecture/assets/coins/tile002.png") },
-      { src: loadImage("../w2d5/p5funLecture/assets/coins/tile003.png") },
-      { src: loadImage("../w2d5/p5funLecture/assets/coins/tile004.png") },
+      { src: loadImage("./assets/coins/tile000.png") },
+      { src: loadImage("./assets/coins/tile001.png") },
+      { src: loadImage("./assets/coins/tile002.png") },
+      { src: loadImage("./assets/coins/tile003.png") },
+      { src: loadImage("./assets/coins/tile004.png") },
     ];
   }
 
