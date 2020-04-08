@@ -13,7 +13,7 @@ class Obstacles {
     this.index = Math.floor(Math.random() * this.imgs.length);
     this.height = 35; //this.imgs[0].src.height; I dont know why this isnt working
     this.width = 35; //this.imgs[0].src.width;
-
+    this.speed = 1 * (1 + game.level / 2);
     this.x = width;
     this.y = random(0, height - this.height);
   }
@@ -48,7 +48,7 @@ class Obstacles {
 
   display() {
     //Moving the OBSTACLE TO THE LEFT
-    this.x--;
+    this.x -= this.speed;
     image(this.imgs[this.index].src, this.x, this.y);
   }
 }
@@ -58,6 +58,7 @@ class Coins extends Obstacles {
     this.height = 15;
     this.width = 15;
     this.index = 0;
+    this.speed = 1 * (1 + game.level / 2);
     this.imgs = [
       { src: loadImage("./assets/coins/tile000.png") },
       { src: loadImage("./assets/coins/tile001.png") },
@@ -68,7 +69,7 @@ class Coins extends Obstacles {
   }
 
   display() {
-    this.x--;
+    this.x -= this.speed;
     if (frameCount % 10 === 0) {
       this.index++;
     }
@@ -76,18 +77,26 @@ class Coins extends Obstacles {
   }
 }
 
-class Bullets extends Obstacles {
+class Comets extends Obstacles {
   constructor(x, y, img) {
     super(x, y);
-    this.speed = 3;
+    this.speed = 3 * (1 + game.level / 4);
     this.index = 0;
     this.imgs = [
-      { src: loadImage("./assets/player/run.gif") },
-      //{ src: loadImage("./assets/bullets/tile002.png") },
-      //{ src: loadImage("./assets/bullets/tile003.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0001.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0002.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0003.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0004.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0005.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0006.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0007.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0008.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0009.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0010.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0011.png") },
     ];
-    this.height = this.imgs[0].src.height;
-    this.width = this.imgs[0].src.width;
+    this.height = 37; //this.imgs[0].src.height;
+    this.width = 37; //this.imgs[0].src.width;
   }
 
   display() {

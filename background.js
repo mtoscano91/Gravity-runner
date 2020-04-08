@@ -2,10 +2,12 @@ class Background {
   constructor() {
     this.imgs = [
       {
-        src: loadImage("/assets/background/Nebula Blue.png"),
+        src: loadImage("/assets/background/Nebula Aqua-Pink.png"),
         x: 0,
         speed: 0,
       },
+      { src: loadImage("/assets/background/Nebula Blue.png"), x: 0, speed: 0 },
+      { src: loadImage("/assets/background/Nebula Red.png"), x: 0, speed: 0 },
       {
         src: loadImage("/assets/background/Stars Small_1.png"),
         x: 0,
@@ -30,8 +32,9 @@ class Background {
   }
 
   display() {
+    image(this.imgs[game.level % 3].src, this.imgs[game.level % 3].x, 0);
     this.imgs.forEach((element) => {
-      this.move(element);
+      if (this.imgs.indexOf(element) > 2) this.move(element);
     });
   }
 

@@ -58,22 +58,6 @@ class Player {
 
     ///Display image in canvas
     this.displayImg(this.orientation);
-
-    //Loop depending on speed
-    /*
-    if (Math.abs(this.speedX) > 3 || Math.abs(this.speedY) > 3) {
-      image(this.imgs[4].src, this.x, this.y);
-    } else if (Math.abs(this.speedX) > 2 || Math.abs(this.speedY) > 2) {
-      image(this.imgs[3].src, this.x, this.y);
-    } else if (Math.abs(this.speedX) > 1 || Math.abs(this.speedY) > 1) {
-      image(this.imgs[2].src, this.x, this.y);
-    } else {
-      if (frameCount % 10 === 0) {
-        this.index++;
-      }
-      image(this.imgs[this.index % 2].src, this.x, this.y);
-    }
-    */
   }
 
   gravityUp() {

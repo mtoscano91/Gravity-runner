@@ -1,4 +1,5 @@
 let game = new Game();
+game.highScore = localStorage.getItem("gameScore") || 0;
 
 function preload() {
   //MUSICA + IMAGENES + INICIALIZAR EL GAME. POR Q NEW GAME NO VIENE ACA?
@@ -32,11 +33,18 @@ function keyPressed() {
   }
   //LEFT 37
   if (keyCode === 37) {
-    //game.player.gravityUp();
     game.player.gravityLeft();
   }
   //RIGHT 39
   if (keyCode === 39) {
     game.player.gravityRight();
+  }
+  //Space bar
+  if (keyCode === 32 && game.finished === true) {
+    window.location.reload();
+  }
+  if (keyCode === 32 && !game.started) {
+    game.started = true;
+    loop();
   }
 }
