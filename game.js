@@ -45,16 +45,18 @@ class Game {
       fill("white");
       textSize(50);
       text("Gravity Runner", 400, 150);
-      textSize(30);
-      text("Press SPACEBAR to start the game", 400, 250);
       textSize(15);
       text(
-        "Help Major Tom recover his protein pills and get back to the spaceship",
+        "Help Major Tom recover his protein pills while avoiding the asteroids",
         400,
-        350
+        210
       );
+      textSize(30);
+      text("Press SPACEBAR to start the game", 400, 310);
       textSize(15);
-      text("Control gravity with Arrow Keys", 400, 375);
+      text("Use gravity to move with Arrow Keys", 200, 375);
+      textSize(15);
+      text("Press M to mute the music", 600, 375);
       noLoop();
     }
   }
@@ -123,7 +125,7 @@ class Game {
       textSize(100);
       text(`${this.score}`, 400, 175);
       textSize(30);
-      text("Press SPACEBAR to restart", 400, 290);
+      text("Press SPACEBAR to restart", 400, 310);
       // setting the new score in the browser
       localStorage.setItem("gameScore", this.highScore);
       // we stop looping the whole game, if we wanted to reloop we can do use loop()
