@@ -1,7 +1,7 @@
 class Game {
   constructor() {
     this.obstacles = [];
-    this.coins = [];
+    this.pills = [];
     this.comets = [];
     this.score = 0;
     this.level = 1;
@@ -10,6 +10,8 @@ class Game {
     this.started = false;
     this.highScore = 0;
     this.immune = false;
+    this.intro = false;
+    this.music = true;
   }
 
   init() {
@@ -30,11 +32,14 @@ class Game {
   checklvl() {
     let currentLevel = this.level;
     this.level = 1 + Math.floor(this.score / 50);
-    if (this.level !== currentLevel && this.lives !== 3) this.lives++;
+    if (this.level !== currentLevel) {
+      lvlUpSound.play();
+      if (this.lives !== 3) this.lives++;
+    }
   }
 
   isGameStarted() {
-    if (!game.started) {
+    if (!this.started && !this.intro) {
       this.background.display();
       textAlign(CENTER, CENTER);
       fill("white");
@@ -42,6 +47,29 @@ class Game {
       text("Gravity Runner", 400, 150);
       textSize(30);
       text("Press SPACEBAR to start the game", 400, 250);
+      textSize(15);
+      text(
+        "Help Major Tom get back his protein pills and get back to the spaceship",
+        400,
+        350
+      );
+      textSize(15);
+      text("Control gravity with Arrow Keys", 400, 375);
+      noLoop();
+    }
+  }
+
+  ///This is not working
+  isGameIntro() {
+    if (!this.started && this.intro) {
+      clear();
+      image(this.background.imgs[1].src, 0, 0);
+      textAlign(CENTER, CENTER);
+      fill("white");
+      textSize(50);
+      text("Story", 400, 150);
+      textSize(30);
+      text("Help Major Tom collect the gems", 400, 250);
       noLoop();
     }
   }
@@ -60,11 +88,18 @@ class Game {
     text(`HIGHSCORE: ${this.highScore}`, (width * 4) / 5, 20);
   }
 
+  isMusic() {
+    if (this.music) {
+      image(this.musicIcon, (width * 12) / 13, 10);
+    }
+  }
+
   collision(items) {
     if (!this.immune) {
       items.forEach((item) => {
         if (item.checkCollision(this.player)) {
           this.lives--;
+          collisionSound.play();
           this.immune = true;
           setTimeout(() => {
             this.immune = false;
@@ -74,7 +109,7 @@ class Game {
     }
   }
 
-  isFinished() {
+  isGameFinished() {
     if (this.finished) {
       clear();
       image(this.background.imgs[1].src, 0, 0);
@@ -82,10 +117,13 @@ class Game {
       this.dashboardUpate();
       textAlign(CENTER, CENTER);
       fill("white");
-      textSize(50);
-      text("GAME OVER", 400, 150);
       textSize(30);
-      text("Press SPACEBAR to restart", 400, 250);
+      if (this.score === this.highScore) text("New Highscore!", 400, 80);
+      text("Your score:", 250, 175);
+      textSize(100);
+      text(`${this.score}`, 400, 175);
+      textSize(30);
+      text("Press SPACEBAR to restart", 400, 290);
       // setting the new score in the browser
       localStorage.setItem("gameScore", this.highScore);
       // we stop looping the whole game, if we wanted to reloop we can do use loop()
@@ -97,14 +135,9 @@ class Game {
     clear();
     this.background.display();
     this.isGameStarted();
-
-    if (this.immune) {
-      if (frameCount % 5 === 0) { ///Controls stop working while this is true
-        this.player.display();
-      }
-    } else {
-      this.player.display();
-    }
+    this.isGameIntro();
+    this.player.display();
+    this.isMusic();
 
     ///Levels logic
     this.checklvl();
@@ -121,16 +154,16 @@ class Game {
 
     this.collision(this.obstacles);
 
-    //Coins
-    this.create(Coins, 150, this.coins);
+    //Pills
+    this.create(Pills, 150, this.pills);
 
-    this.coins.forEach((coin) => {
-      coin.display();
+    this.pills.forEach((pill) => {
+      pill.display();
     });
 
-    this.coins = this.coins.filter((coin) => {
-      if (coin.checkCollision(this.player)) this.score += 5;
-      return !coin.checkCollision(this.player);
+    this.pills = this.pills.filter((pill) => {
+      if (pill.checkCollision(this.player)) this.score += 5;
+      return !pill.checkCollision(this.player);
     });
 
     //Comets
@@ -143,6 +176,6 @@ class Game {
     this.collision(this.comets);
 
     //Finish game
-    this.isFinished();
+    this.isGameFinished();
   }
 }

@@ -52,28 +52,23 @@ class Obstacles {
     image(this.imgs[this.index].src, this.x, this.y);
   }
 }
-class Coins extends Obstacles {
+class Pills extends Obstacles {
   constructor(x, y, imgs) {
     super(x, y, imgs);
     this.height = 15;
     this.width = 15;
-    this.index = 0;
     this.speed = 1 * (1 + game.level / 2);
     this.imgs = [
-      { src: loadImage("./assets/coins/tile000.png") },
-      { src: loadImage("./assets/coins/tile001.png") },
-      { src: loadImage("./assets/coins/tile002.png") },
-      { src: loadImage("./assets/coins/tile003.png") },
-      { src: loadImage("./assets/coins/tile004.png") },
+      { src: loadImage("/assets/Pills/pill_1.png") },
+      { src: loadImage("/assets/Pills/pills_2.png") },
     ];
+    this.index = Math.floor(Math.random() * this.imgs.length);
   }
 
   display() {
     this.x -= this.speed;
-    if (frameCount % 10 === 0) {
-      this.index++;
-    }
-    image(this.imgs[this.index % this.imgs.length].src, this.x, this.y);
+    console.log(this.index);
+    image(this.imgs[this.index].src, this.x, this.y);
   }
 }
 

@@ -57,7 +57,13 @@ class Player {
     }
 
     ///Display image in canvas
-    this.displayImg(this.orientation);
+    if (game.immune) {
+      if (frameCount % 5 === 0) {
+        this.displayImg(this.orientation);
+      }
+    } else {
+      this.displayImg(this.orientation);
+    }
   }
 
   gravityUp() {
