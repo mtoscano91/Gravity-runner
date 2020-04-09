@@ -13,3 +13,11 @@ Scoring is increased by both pill collecting and survival time.
 <img src="/assets/screenshots/Screenshot 2020-04-09 at 16.01.48.png" alt="Start screen image">
 <img src="/assets/screenshots/Screenshot 2020-04-09 at 16.14.27.png" alt="Ingame image">
 <img src="/assets/screenshots/Screenshot 2020-04-09 at 16.14.40.png" alt="End screen image">
+
+<h2>Credits</h2>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
