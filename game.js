@@ -10,7 +10,6 @@ class Game {
     this.started = false;
     this.highScore = 0;
     this.immune = false;
-    this.intro = false;
     this.music = true;
   }
 
@@ -39,7 +38,7 @@ class Game {
   }
 
   isGameStarted() {
-    if (!this.started && !this.intro) {
+    if (!this.started) {
       this.background.display();
       textAlign(CENTER, CENTER);
       fill("white");
@@ -47,31 +46,16 @@ class Game {
       text("Gravity Runner", 400, 150);
       textSize(15);
       text(
-        "Help Major Tom recover his protein pills while avoiding the asteroids",
+        "Use gravity to help Major Tom recover his protein pills while avoiding the asteroids",
         400,
         210
       );
       textSize(30);
       text("Press SPACEBAR to start the game", 400, 310);
       textSize(15);
-      text("Use gravity to move with Arrow Keys", 200, 375);
+      text("Activate gravity with Arrow Keys", 200, 375);
       textSize(15);
       text("Press M to mute the music", 600, 375);
-      noLoop();
-    }
-  }
-
-  ///This is not working
-  isGameIntro() {
-    if (!this.started && this.intro) {
-      clear();
-      image(this.background.imgs[1].src, 0, 0);
-      textAlign(CENTER, CENTER);
-      fill("white");
-      textSize(50);
-      text("Story", 400, 150);
-      textSize(30);
-      text("Help Major Tom collect the gems", 400, 250);
       noLoop();
     }
   }
@@ -88,6 +72,10 @@ class Game {
     text(`LIVES: ${this.lives}`, (width * 2) / 5, 20);
     text(`SCORE: ${this.score}`, (width * 3) / 5, 20);
     text(`HIGHSCORE: ${this.highScore}`, (width * 4) / 5, 20);
+    if (this.started) {
+      text("Activate gravity with Arrow Keys", 200, 375);
+      text("M to mute music", 600, 375);
+    }
   }
 
   isMusic() {
@@ -137,7 +125,6 @@ class Game {
     clear();
     this.background.display();
     this.isGameStarted();
-    this.isGameIntro();
     this.player.display();
     this.isMusic();
 

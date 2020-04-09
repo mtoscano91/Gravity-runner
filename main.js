@@ -57,22 +57,8 @@ function keyPressed() {
     window.location.reload();
   }
   if (keyCode === 32 && !game.started) {
-    game.intro = true;
     bgMusic.play();
-
-    /*
-    myVar = setTimeout(() => {
-      game.intro = false;
-      game.started = true;
-      loop();
-    }, 10000);
-    */
-  }
-
-  if (keyCode === 32 && game.intro) {
-    game.intro = false;
     game.started = true;
-    //clearTimeout(myVar)//clearInterval(myVar)
     loop();
   }
 
