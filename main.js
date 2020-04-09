@@ -25,7 +25,7 @@ function setup() {
   game.setup();
 
   setInterval(() => {
-    bgMusic.play();
+    if (this.music) bgMusic.play();
   }, 81000);
 }
 

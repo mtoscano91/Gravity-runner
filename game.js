@@ -49,13 +49,29 @@ class Game {
       text("Gravity Runner", 400, 150);
       textSize(15);
       text(
-        "Use gravity to help Major Tom recover his protein pills while avoiding the asteroids",
+        "Use gravity to help Major Tom recover his protein pills. Beware of the asteroids!",
         400,
         210
       );
       textSize(30);
       text("Press SPACEBAR to start the game", 400, 310);
       noLoop();
+    }
+  }
+
+  tutorial() {
+    if (frameCount < 700 && game.started) {
+      textAlign(CENTER, CENTER);
+      fill("white");
+      textSize(40);
+      if (frameCount < 300) {
+        text("With all 4 Arrow Keys", 400, 150);
+        text("switch between gravities", 400, 250);
+      } else if (frameCount < 600) {
+        text("Try it out!", 400, 200);
+      } else {
+        text("GO!", 400, 200);
+      }
     }
   }
 
@@ -127,19 +143,7 @@ class Game {
     this.isMusic();
 
     //Controls
-    if (frameCount < 700 && game.started) {
-      textAlign(CENTER, CENTER);
-      fill("white");
-      textSize(40);
-      if (frameCount < 300) {
-        text("With all 4 Arrow Keys", 400, 150);
-        text("switch between gravities", 400, 250);
-      } else if (frameCount < 600) {
-        text("Try it out!", 400, 200);
-      } else {
-        text("GO!", 400, 200);
-      }
-    }
+    this.tutorial();
 
     ///Levels logic
     this.checklvl();

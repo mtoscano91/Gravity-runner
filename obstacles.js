@@ -67,7 +67,6 @@ class Pills extends Obstacles {
 
   display() {
     this.x -= this.speed;
-    console.log(this.index);
     image(this.imgs[this.index].src, this.x, this.y);
   }
 }
