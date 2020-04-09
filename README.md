@@ -1,4 +1,9 @@
 <h1>Gravity Runner</h1>
+
+# Gravity Runner
+
+## Goal
+
 Game project done in Week 3 of Ironhack's Full Stack Web Development Bootcamp, using P5.js library
 
 <h2>Goal</h2>
@@ -10,9 +15,9 @@ Scoring is increased by both pill collecting and survival time.
 
 <h2>Images</h2>
 
-<img src="/assets/screenshots/Screenshot 2020-04-09 at 16.01.48.png" alt="Start screen image">
-<img src="/assets/screenshots/Screenshot 2020-04-09 at 16.14.27.png" alt="Ingame image">
-<img src="/assets/screenshots/Screenshot 2020-04-09 at 16.14.40.png" alt="End screen image">
+<img src="./assets/screenshots/Screenshot 2020-04-09 at 16.01.48.png" alt="Start screen image">
+<img src="./assets/screenshots/Screenshot 2020-04-09 at 16.14.27.png" alt="Ingame image">
+<img src="./assets/screenshots/Screenshot 2020-04-09 at 16.14.40.png" alt="End screen image">
 
 <h2>Credits</h2>
 <ul>

@@ -12,5 +12,5 @@ body {
 
   /* This centers our sketch vertically. */
   align-items: center;
-  background-image: url("/assets/background/html\ space\ background.jpg");
+  background-image: url("./assets/background/html\ space\ background.jpg");
 }

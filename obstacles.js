@@ -1,14 +1,14 @@
 class Obstacles {
   constructor() {
     this.imgs = [
-      { src: loadImage("/assets/asteroids/tile000.png") },
-      { src: loadImage("/assets/asteroids/tile001.png") },
-      { src: loadImage("/assets/asteroids/tile002.png") },
-      { src: loadImage("/assets/asteroids/tile003.png") },
-      { src: loadImage("/assets/asteroids/tile004.png") },
-      { src: loadImage("/assets/asteroids/tile005.png") },
-      { src: loadImage("/assets/asteroids/tile006.png") },
-      { src: loadImage("/assets/asteroids/tile007.png") },
+      { src: loadImage("./assets/asteroids/tile000.png") },
+      { src: loadImage("./assets/asteroids/tile001.png") },
+      { src: loadImage("./assets/asteroids/tile002.png") },
+      { src: loadImage("./assets/asteroids/tile003.png") },
+      { src: loadImage("./assets/asteroids/tile004.png") },
+      { src: loadImage("./assets/asteroids/tile005.png") },
+      { src: loadImage("./assets/asteroids/tile006.png") },
+      { src: loadImage("./assets/asteroids/tile007.png") },
     ];
     this.index = Math.floor(Math.random() * this.imgs.length);
     this.height = 35; //this.imgs[0].src.height; I dont know why this isnt working
@@ -59,8 +59,8 @@ class Pills extends Obstacles {
     this.width = 15;
     this.speed = 1 * (1 + game.level / 2);
     this.imgs = [
-      { src: loadImage("/assets/Pills/pill_1.png") },
-      { src: loadImage("/assets/Pills/pills_2.png") },
+      { src: loadImage("./assets/Pills/pill_1.png") },
+      { src: loadImage("./assets/Pills/pills_2.png") },
     ];
     this.index = Math.floor(Math.random() * this.imgs.length);
   }
@@ -78,17 +78,17 @@ class Comets extends Obstacles {
     this.speed = 3 * (1 + game.level / 4);
     this.index = 0;
     this.imgs = [
-      { src: loadImage("/assets/glitch_meteor/meteor0001.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0002.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0003.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0004.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0005.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0006.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0007.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0008.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0009.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0010.png") },
-      { src: loadImage("/assets/glitch_meteor/meteor0011.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0001.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0002.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0003.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0004.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0005.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0006.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0007.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0008.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0009.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0010.png") },
+      { src: loadImage("./assets/glitch_meteor/meteor0011.png") },
     ];
     this.height = 37; //this.imgs[0].src.height;
     this.width = 37; //this.imgs[0].src.width;

@@ -5,13 +5,13 @@ let myVar;
 function preload() {
   //MUSICA + IMAGENES + INICIALIZAR EL GAME. POR Q NEW GAME NO VIENE ACA?
   game.init();
-  game.musicIcon = loadImage("/assets/music-icon-removebg-preview copy.png");
+  game.musicIcon = loadImage("./assets/music-icon-removebg-preview copy.png");
   soundFormats("mp3", "ogg", "wav");
   bgMusic = loadSound(
-    "/sounds/music/Komiku_-_24_-_Time_to_go_to_space_now_.mp3"
+    "./sounds/music/Komiku_-_24_-_Time_to_go_to_space_now_.mp3"
   );
-  collisionSound = loadSound("/sounds/collision/qubodup-crash.ogg");
-  lvlUpSound = loadSound("/sounds/Level Up!/piano.wav");
+  collisionSound = loadSound("./sounds/collision/qubodup-crash.ogg");
+  lvlUpSound = loadSound("./sounds/Level Up!/piano.wav");
 }
 
 function setup() {

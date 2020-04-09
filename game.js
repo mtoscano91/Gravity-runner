@@ -57,7 +57,6 @@ class Game {
       text("Control gravity with Arrow Keys", 400, 375);
       noLoop();
     }
-    
   }
 
   ///This is not working
