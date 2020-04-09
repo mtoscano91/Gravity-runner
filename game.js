@@ -23,7 +23,10 @@ class Game {
   }
 
   create(type, ratio, array) {
-    if (frameCount % Math.floor(ratio / (1 + this.level / 10)) === 0) {
+    if (
+      frameCount % Math.floor(ratio / (1 + this.level / 4)) === 0 &&
+      frameCount > 1000
+    ) {
       array.push(new type());
     }
   }
@@ -52,17 +55,13 @@ class Game {
       );
       textSize(30);
       text("Press SPACEBAR to start the game", 400, 310);
-      textSize(15);
-      text("Switch gravities with Arrow Keys", 200, 375);
-      textSize(15);
-      text("Press M to mute the music", 600, 375);
       noLoop();
     }
   }
 
   dashboardUpate() {
     if (this.lives <= 0) this.finished = true;
-    if (frameCount % 100 === 0) this.score++;
+    if (frameCount > 700 && frameCount % 100 === 0) this.score++;
     if (this.score > this.highScore) this.highScore = this.score;
 
     fill("white");
@@ -73,8 +72,7 @@ class Game {
     text(`SCORE: ${this.score}`, (width * 3) / 5, 20);
     text(`HIGHSCORE: ${this.highScore}`, (width * 4) / 5, 20);
     if (this.started) {
-      text("Switch gravities with Arrow Keys", 200, 375);
-      text("M to mute music", 600, 375);
+      text("M to mute music", 700, 375);
     }
   }
 
@@ -128,6 +126,21 @@ class Game {
     this.player.display();
     this.isMusic();
 
+    //Controls
+    if (frameCount < 700 && game.started) {
+      textAlign(CENTER, CENTER);
+      fill("white");
+      textSize(40);
+      if (frameCount < 300) {
+        text("With all 4 Arrow Keys", 400, 150);
+        text("switch between gravities", 400, 250);
+      } else if (frameCount < 600) {
+        text("Try it out!", 400, 200);
+      } else {
+        text("GO!", 400, 200);
+      }
+    }
+
     ///Levels logic
     this.checklvl();
 
@@ -135,7 +148,7 @@ class Game {
     this.dashboardUpate();
 
     //Obstacles
-    this.create(Obstacles, 100, this.obstacles);
+    this.create(Obstacles, 130, this.obstacles);
 
     this.obstacles.forEach((obstacle) => {
       obstacle.display();
@@ -144,7 +157,7 @@ class Game {
     this.collision(this.obstacles);
 
     //Pills
-    this.create(Pills, 150, this.pills);
+    this.create(Pills, 175, this.pills);
 
     this.pills.forEach((pill) => {
       pill.display();
