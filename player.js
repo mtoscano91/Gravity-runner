@@ -3,9 +3,9 @@ class Player {
     this.imgs = {
       default: loadImage("./assets/astronaut/walking.png"),
       down: loadImage("./assets/astronaut/drag down.png"),
-      up: loadImage("/assets/astronaut/drag up.png"),
-      left: loadImage("/assets/astronaut/drag left.png"),
-      right: loadImage("/assets/astronaut/drag right.png"),
+      up: loadImage("./assets/astronaut/drag up.png"),
+      left: loadImage("./assets/astronaut/drag left.png"),
+      right: loadImage("./assets/astronaut/drag right.png"),
     };
 
     this.gravity = 0.05;
