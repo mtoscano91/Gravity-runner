@@ -49,7 +49,7 @@ class Game {
       text("Press SPACEBAR to start the game", 400, 250);
       textSize(15);
       text(
-        "Help Major Tom get back his protein pills and get back to the spaceship",
+        "Help Major Tom recover his protein pills and get back to the spaceship",
         400,
         350
       );
@@ -57,6 +57,7 @@ class Game {
       text("Control gravity with Arrow Keys", 400, 375);
       noLoop();
     }
+    
   }
 
   ///This is not working
@@ -119,7 +120,7 @@ class Game {
       fill("white");
       textSize(30);
       if (this.score === this.highScore) text("New Highscore!", 400, 80);
-      text("Your score:", 250, 175);
+      text("Your score:", 240, 175);
       textSize(100);
       text(`${this.score}`, 400, 175);
       textSize(30);
