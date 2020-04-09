@@ -53,7 +53,7 @@ class Game {
       textSize(30);
       text("Press SPACEBAR to start the game", 400, 310);
       textSize(15);
-      text("Activate gravity with Arrow Keys", 200, 375);
+      text("Switch gravities with Arrow Keys", 200, 375);
       textSize(15);
       text("Press M to mute the music", 600, 375);
       noLoop();
@@ -73,7 +73,7 @@ class Game {
     text(`SCORE: ${this.score}`, (width * 3) / 5, 20);
     text(`HIGHSCORE: ${this.highScore}`, (width * 4) / 5, 20);
     if (this.started) {
-      text("Activate gravity with Arrow Keys", 200, 375);
+      text("Switch gravities with Arrow Keys", 200, 375);
       text("M to mute music", 600, 375);
     }
   }
