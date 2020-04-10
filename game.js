@@ -25,7 +25,7 @@ class Game {
   create(type, ratio, array) {
     if (
       frameCount % Math.floor(ratio / (1 + this.level / 4)) === 0 &&
-      frameCount > 1000
+      frameCount > 700
     ) {
       array.push(new type());
     }
@@ -67,7 +67,7 @@ class Game {
       if (frameCount < 300) {
         text("With all 4 Arrow Keys", 400, 150);
         text("switch between gravities", 400, 250);
-      } else if (frameCount < 600) {
+      } else if (frameCount < 650) {
         text("Try it out!", 400, 200);
       } else {
         text("GO!", 400, 200);
@@ -77,7 +77,7 @@ class Game {
 
   dashboardUpate() {
     if (this.lives <= 0) this.finished = true;
-    if (frameCount > 700 && frameCount % 100 === 0) this.score++;
+    if (frameCount > 650 && frameCount % 100 === 0) this.score++;
     if (this.score > this.highScore) this.highScore = this.score;
 
     fill("white");
@@ -123,7 +123,7 @@ class Game {
       fill("white");
       textSize(30);
       if (this.score === this.highScore) text("New Highscore!", 400, 80);
-      text("Your score:", 240, 175);
+      text("Your score:", 230, 175);
       textSize(100);
       text(`${this.score}`, 400, 175);
       textSize(30);
@@ -168,7 +168,10 @@ class Game {
     });
 
     this.pills = this.pills.filter((pill) => {
-      if (pill.checkCollision(this.player)) this.score += 5;
+      if (pill.checkCollision(this.player)) {
+        this.score += 10;
+        pillSound.play();
+      }
       return !pill.checkCollision(this.player);
     });
 

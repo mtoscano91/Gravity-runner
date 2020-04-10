@@ -12,6 +12,7 @@ function preload() {
   );
   collisionSound = loadSound("./sounds/collision/qubodup-crash.ogg");
   lvlUpSound = loadSound("./sounds/Level Up!/piano.wav");
+  pillSound = loadSound("./sounds/pill pick up/life_pickup.wav");
 }
 
 function setup() {
@@ -19,8 +20,6 @@ function setup() {
   createCanvas(
     800,
     400
-    // game.background.imgs[0].src.width,
-    // game.background.imgs[0].src.height
   );
   game.setup();
 
@@ -31,7 +30,6 @@ function setup() {
 
 function draw() {
   //LA LOGICA Q ESTA FUNCIONANDO CONTINUAMENTE: game.display();
-
   game.display();
 }
 

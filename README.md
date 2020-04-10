@@ -17,9 +17,12 @@ Scoring is increased by both pill collecting and survival time.
 <img src="./assets/screenshots/Screenshot 2020-04-09 at 16.14.27.png" alt="Ingame image">
 <img src="./assets/screenshots/Screenshot 2020-04-09 at 16.14.40.png" alt="End screen image">
 
+## Controls
+
+Major Tom is being pulled around with gravity (in all 4 directions!). Toggle between gravities with the Arrow Keys. But be careful! Inertia can be pretty tricky to handle!
+
 ## Credits
 
--
--
--
--
+## -
+
+## -

@@ -18,7 +18,7 @@ class Obstacles {
     this.y = random(0, height - this.height);
   }
 
-  //CHEQUEAR Q LAS COLIISONES CON MONEDAS ME TOMAN LA WIDTH Y HEIGHT DEL RECT
+  //CHEQUEAR Q LAS COLIISONES CON MONEDAS ME TOMAN LA WIDTH Y HEIGHT DEL FONDO
   checkCollision(player) {
     let left = this.x;
     let right = this.x + this.width;
